@@ -22,6 +22,19 @@
     .config(function(RestangularProvider){
 
     })
+    .controller('MainController', function($scope){
+      var firebase = new Firebase('https://glowing-inferno-3596.firebaseio.com');
+
+      var self = this;
+
+      this.login = function(){
+        firebase.authWithOAuthPopup('github', function(error, auth){
+          $scope.$apply(function(){
+            self.username = auth.github.username
+          });
+        });
+      } // END login
+    }) // END controller(MainController)
   ; // END module('tiy-upvote')
 
   // app.controller(..., function(){

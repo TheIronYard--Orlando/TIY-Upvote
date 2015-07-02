@@ -40,11 +40,16 @@
     RestangularProvider.setBaseUrl('https://gatorpazz-tiy-upvote.firebaseio.com');
   });
 
-  app.controller('QuestionsController', function(Restangular){
+  app.controller('QuestionsController', function($routeParams, Restangular){
     var self = this;
 
-    Restangular
-      .one('user').put('{ "username": "gatorpazz" }');
+    console.log($routeParams);
+
+    debugger;
+
+    // TODO: Fetch Questions from Firebase!
+    // TODO: Attach Questions from Firebase to Controller!
+    // TODO: Profit!
   });
 
 
